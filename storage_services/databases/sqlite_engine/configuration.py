@@ -1,3 +1,6 @@
+import os
+
+BASE_DIR = os.path.dirname(__file__)
 PREREQUISITE_SQL_FILE = {
-    'location': '/Users/preetidewani/Documents/interview/last9/aws-worthy-boxes/storage_services/databases/sqlite_engine/prerequisite.sql'
+    'location': os.path.join(BASE_DIR, 'prerequisite.sql')
 }
