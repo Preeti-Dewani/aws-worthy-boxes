@@ -114,5 +114,8 @@ To create pipeline using these services 'command_paths' can be used.
       
        
    
-                                   
+ Things pending to cover:
+ 1. Type handling
+ 2. Better error handing
+ 3. Ansible dynamic inventory
 
