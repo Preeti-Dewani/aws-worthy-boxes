@@ -13,7 +13,9 @@ To create pipeline using these services 'command_paths' can be used.
 
    Currently it has support for 'aws cloud'. Details of supported services can be found in settings.py
 
-   Usage Example: Get all ec2 instances details:
+   Usage: 
+   
+   Ex:  Get all ec2 instances details:
 
       1. Configuration:
 
@@ -45,17 +47,54 @@ To create pipeline using these services 'command_paths' can be used.
 
               aws_obj = AWSClient(load_via='file')
               result = awsobj.get_ec2_instances_details()
+              
+      Hightlights:
+      
+      - Configuration loading can also be done dynamically.
+         
+      - Resource client can be changed dynamically.
+         
+      - Service exceptions are handled throught botocore
 
 
 2. Storage Services: All sort of data storage can be placed and used from these services.
 
    Currently it has support for 'sqlite_engine' falling into database kind of storage. Details of supported services can be found in settings.py
+   
    Usage Example: 
    
    i. Run any prerequisite SQL file: Configure prerequisite.sql file in configuration.py
    
        sqlite_obj = SqliteClient(database='instances.db')
        sqlite_obj.run_prerequisites()
+       
+   ii. Run a query using the interface
+   
+       sqlite_obj = SqliteClient(database='instances.db')
+       result = sqlite_obj.query_result("select * from servers where state='running';", row_count=10)
+       
+   Hightlights:
+      - Atomicity can also be added to query by passing atomic=True/False as a parameter to call. 
+      
+      - Connection open and close will be handled internally by context manager itself.
+      
+3. Target Services: All sort of write services can be placed and used from these services.
+
+   Currently it has support for 'ssh_config_service'. Details of supported services can be found in settings.py
+   
+   Usage Example:
+   
+   i. Write data in ssh file: Location can be passed on as param in client constructor or can be configured.
+   
+         config_obj = SSHConfigClient(file_path='/home/preeti/.ssh/aws_demo.config')
+         config_obj.write_config_entry(data)
+         
+         
+ 
+ Creating Pipeline Via Commands:
+ 
+ 
+      
        
    
                                    
