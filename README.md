@@ -12,7 +12,7 @@ To create pipeline using these services 'command_paths' can be used.
 1. Cloud Service: All cloud related services can be used from these services. 
                   Currently it has support for 'aws cloud'. Details of supported services can be found in settings.py
                   Usage Example: Get all ec2 instances details:
-                                 1. Configuration:
+                  1. Configuration:
                                     a. Configuration via file: Location can be configured in configuration.py of each cloud service
 
                                         Code: aws_obj = AWSClient(load_via='file')
