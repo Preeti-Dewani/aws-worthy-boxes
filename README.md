@@ -6,7 +6,7 @@ There are 3 different kinds of services which are supported as of now:
 2. Storage Services
 3. Target Services
 
-To create pipeline using these services 'command_paths' can be used.
+To create pipeline using these services `command_paths` can be used.
 
 
 ## Cloud Services: All cloud related services can be used from these services.
