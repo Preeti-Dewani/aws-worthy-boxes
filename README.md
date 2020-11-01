@@ -46,7 +46,7 @@ To create pipeline using these services 'command_paths' can be used.
    3. Get details of all ec2 instances:
 
           aws_obj = AWSClient(load_via='file')
-          result = awsobj.get_ec2_instances_details()
+          result = aws_obj.get_ec2_instances_details()
               
    ### Hightlights:
       
@@ -73,7 +73,7 @@ To create pipeline using these services 'command_paths' can be used.
    ii. Run a query using the interface
    
        sqlite_obj = SqliteClient(database='instances.db')
-       result = sqlite_obj.query_result("select * from servers where state='running';", row_count=10)
+       result = sqlite_obj.query_result("select * from servers where state='running';", records_count=10)
        
    ### Hightlights:
    
