@@ -9,7 +9,7 @@ There are 3 different kinds of services which are supported as of now:
 To create pipeline using these services 'command_paths' can be used.
 
 
-## Cloud Service: All cloud related services can be used from these services.
+## Cloud Services: All cloud related services can be used from these services.
 
    Currently it has support for `aws cloud`. Details of supported services can be found in `settings.py`
 
@@ -101,7 +101,13 @@ To create pipeline using these services 'command_paths' can be used.
  
  1. Create action definition in `action_definitions.py` file as per pipeline.
  
- 2. If commands and facade are supported for those action then it can be used directly else new command and facade class needs to be created
+ 2. If commands and facade are supported for those action then it can be used directly else new command and facade class needs to be created.
+ 
+ 3. Usage via commands:
+ 
+         from command_paths.execute import Controller
+         ctrl = Controller(action_name='AWS_SQLITE_SSH_CONFIG')
+         result = ctrl.executor()
       
        
    
