@@ -19,6 +19,7 @@ To create pipeline using these services 'command_paths' can be used.
 
       a. Configuration via file: Location can be configured in configuration.py of each cloud service
 
+          from cloud_services.aws_cloud.client import AWSClient
           aws_obj = AWSClient(load_via='file')
 
       b. Configuration via object: Creds can be specified in configuration.py
@@ -65,6 +66,7 @@ To create pipeline using these services 'command_paths' can be used.
    
    i. Run any prerequisite SQL file: Configure prerequisite.sql file in configuration.py
    
+       from storage_services.databases.sqlite_engine.client import SqliteClient
        sqlite_obj = SqliteClient(database='instances.db')
        sqlite_obj.run_prerequisites()
        
@@ -88,6 +90,7 @@ To create pipeline using these services 'command_paths' can be used.
    
    i. Write data in ssh file: Location can be passed on as param in client constructor or can be configured.
    
+    from target_services.ssh_config_service.target import SSHConfigClient
     config_obj = SSHConfigClient(file_path='/home/preeti/.ssh/aws_demo.config')
     config_obj.write_config_entry(data)
          
