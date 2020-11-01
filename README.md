@@ -28,23 +28,24 @@ To create pipeline using these services 'command_paths' can be used.
       Creds will be loaded on boto3 from code itself.
 
 
-      2. Provide resource to be used for service: It can be done in 2 ways:
-          a. With constructor:
+   2. Provide resource to be used for service: It can be done in 2 ways:
+   
+      a. With constructor:
 
-              aws_obj = AWSClient(load_via='file', resource='ec2')
+          aws_obj = AWSClient(load_via='file', resource='ec2')
 
-          b. Setting the resource property
+      b. Setting the resource property
 
-              aws_obj = AWSClient(load_via='file')
-              aws_obj.resource = 'ec2'
+          aws_obj = AWSClient(load_via='file')
+          aws_obj.resource = 'ec2'
 
-              with this approach internal boto3 client will send a new client with this resource. No need to call boto3 client again.
+       with this approach internal boto3 client will send a new client with this resource. No need to call boto3 client again.
 
 
-      3. Get details of all ec2 instances:
+   3. Get details of all ec2 instances:
 
-              aws_obj = AWSClient(load_via='file')
-              result = awsobj.get_ec2_instances_details()
+          aws_obj = AWSClient(load_via='file')
+          result = awsobj.get_ec2_instances_details()
               
    ### Hightlights:
       
@@ -87,8 +88,8 @@ To create pipeline using these services 'command_paths' can be used.
    
    i. Write data in ssh file: Location can be passed on as param in client constructor or can be configured.
    
-         config_obj = SSHConfigClient(file_path='/home/preeti/.ssh/aws_demo.config')
-         config_obj.write_config_entry(data)
+    config_obj = SSHConfigClient(file_path='/home/preeti/.ssh/aws_demo.config')
+    config_obj.write_config_entry(data)
          
          
  
