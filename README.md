@@ -11,9 +11,9 @@ To create pipeline using these services 'command_paths' can be used.
 
 1. Cloud Service: All cloud related services can be used from these services.
 
-      Currently it has support for 'aws cloud'. Details of supported services can be found in settings.py
+   Currently it has support for 'aws cloud'. Details of supported services can be found in settings.py
 
-      Usage Example: Get all ec2 instances details:
+   Usage Example: Get all ec2 instances details:
 
       1. Configuration:
 
@@ -29,11 +29,11 @@ To create pipeline using these services 'command_paths' can be used.
 
 
       2. Provide resource to be used for service: It can be done in 2 ways:
-          1. With constructor:
+          a. With constructor:
 
               aws_obj = AWSClient(load_via='file', resource='ec2')
 
-          2. Setting the resource property
+          b. Setting the resource property
 
               aws_obj = AWSClient(load_via='file')
               aws_obj.resource = 'ec2'
@@ -48,8 +48,15 @@ To create pipeline using these services 'command_paths' can be used.
 
 
 2. Storage Services: All sort of data storage can be placed and used from these services.
-                     Currently it has support for 'sqlite_engine' falling into database kind of storage. Details of supported services can be found in settings.py
-                     Usage Example: 
 
+   Currently it has support for 'sqlite_engine' falling into database kind of storage. Details of supported services can be found in settings.py
+   Usage Example: 
+   
+   i. Run any prerequisite SQL file: Configure prerequisite.sql file in configuration.py
+   
+       sqlite_obj = SqliteClient(database='instances.db')
+       sqlite_obj.run_prerequisites()
+       
+   
                                    
 
